@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  height: 100dvh;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 1em;
+}
+article {
+  border: 2px solid black;
+  border-radius: 2em;
+  box-shadow: 0.5em 0.5em 0.5em #474646b2;
+  width: 60%;
+}
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2em;
+}
+#sectionHistorico {
+  margin-top: 0.5em;
+}
+
+label {
+  display: grid;
+  justify-items: center;
+  row-gap: 1em;
+  margin: auto;
+}
+
+input[type="submit"] {
+  grid-column-start: 2;
+  margin: auto;
+}
+
+img {
+  width: 50%;
+  height: auto;
+  margin: auto;
+}
