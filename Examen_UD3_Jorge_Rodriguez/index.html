@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="script.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Thomas y sus Amigos: Gestor de Trenes</h1>
+      <section>
+        <h2>Registrar Nuevo Tren</h2>
+        <label for="nombre"
+          >Nombre:
+          <input type="text" name="nombreTren" id="nombreTren" />
+        </label>
+        <label for="velocidad"
+          >Velocidad (km/h):
+          <input type="number" name="velocidadTren" id="velocidadTren" />
+        </label>
+        <label for="tipoTren"
+          >Tipo:
+          <select name="tipoTren" id="tipoTren">
+            <option name="vapor">Vapor</option>
+            <option name="diesel">Diésel</option>
+            <option name="electrico">Eléctrico</option>
+            <option name="maglev">Maglev</option>
+          </select>
+        </label>
+        <button id="addTren">Añadir tren</button>
+      </section>
+      <section>
+        <h2>Simulador de Viajes</h2>
+        <label for="origen"
+          >Estacion Origen:
+          <select name="origenTren" id="origenTren">
+            <option name="sodor">Sodor</option>
+            <option name="knapford">Knapford</option>
+            <option name="vicarstown">Vicarstown</option>
+            <option name="tidmouth">Tidmouth Sheds</option>
+          </select>
+        </label>
+        <label for=""
+          >Estacion Destino:
+          <select name="destinoTren" id="destinoTren">
+            <option name="sodor">Sodor</option>
+            <option name="knapford">Knapford</option>
+            <option name="vicarstown">Vicarstown</option>
+            <option name="tidmouth">Tidmouth Sheds</option>
+          </select>
+        </label>
+        <label for=""
+          >Selecciona Tren:
+          <select name="selectTrenes" id="selectTrenes">
+            <option name="no">--Trenes--</option>
+          </select>
+        </label>
+        <button id="simularViaje">Simular viaje</button>
+        <div id="divViajesTrenes"></div>
+      </section>
+      <section>
+        <h2>Listado de Trenes</h2>
+        <input type="text" />
+        <button>Search</button>
+        <div id="trenes"></div>
+        <button id="borrarTrenes">Borrar Todos los Trenes</button>
+      </section>
+    </main>
+  </body>
+</html>
