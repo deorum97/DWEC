@@ -30,7 +30,7 @@ botonSimularViaje.addEventListener("click", (event) => {
   const destinoTren = document.getElementById("destinoTren").value;
   const trenElegido = document.getElementById("selectTrenes").value;
 
-  const distancia = viajeTren(origenTren, destinoTren);
+  const distancia = viajeTren(origenTren, destinoTren, trenElegido);
 
   const divViajesTrenes = document.getElementById("divViajesTrenes");
 

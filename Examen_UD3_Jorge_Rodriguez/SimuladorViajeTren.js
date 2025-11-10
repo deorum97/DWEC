@@ -8,6 +8,8 @@ import {
 } from "./constants.js";
 
 export function viajeTren(origenTren, destinoTren) {
+  origenTren = origenTren.toLowerCase();
+  destinoTren = destinoTren.toLowerCase();
   switch (origenTren) {
     case "sodor":
       if (destinoTren === "knapford") {
