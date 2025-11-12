@@ -1,10 +1,12 @@
-export class Task {
-  constructor(id, title, description, priority, done, createdAt) {
-    this.id = id;
+class Task {
+  constructor(title, description, priority, done = false) {
+    this.id = new Date(Date.now());
     this.title = title;
     this.description = description;
     this.priority = priority;
     this.done = done;
-    this.createdAt = createdAt;
+    this.createdAt = new Date();
   }
 }
+
+export { Task };

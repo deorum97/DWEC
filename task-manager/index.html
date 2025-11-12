@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer type="module" src="main.js"></script>
+  </head>
+  <body>
+    <main>
+      <label for="titulo"
+        >Título
+        <input type="text" name="titulo" id="titulo" />
+      </label>
+      <label for="descripcion"
+        >descripcion
+        <input type="text" name="descripcion" id="descripcion" />
+      </label>
+      <label for="prioridad"
+        >Prioridad
+        <select name="prioridad" id="prioridad">
+          <option name="low">Low</option>
+          <option name="medium">Medium</option>
+          <option name="High">High</option>
+        </select>
+      </label>
+      <button id="crearTarea">crear</button>
+      <section id="listaTareas"></section>
+    </main>
+  </body>
+</html>
