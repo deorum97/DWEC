@@ -1,0 +1,12 @@
+#listaTareas {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+
+  div {
+    border: 1px solid black;
+    p:first-child {
+      background-color: lightgrey;
+    }
+  }
+}
