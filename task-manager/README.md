@@ -11,41 +11,24 @@ se puede pasar a singleton pero al no usarlo no lo he considerado necesario.
 Para ejecutarlo solo hace falta crear las tareas con el propio formulario que hay y en las campos que donde aparecen las tareas creadas se pueden usar unos botones para borrar o modificar las tareas que se han creado.
 En la parte inferior hay un select para que muetre las listas filtradas con lo que se quiera.
 
+```
 task-manager-pro/
-
 │
-
 ├── index.html
-
 ├── style.css
-
 ├── README.md
-
-└── js/
-
+├── js/
 ├── main.js
-
 ├── models/
-
 │ └── task.js
-
 │ └── constants.js
-
 ├── patterns/
-
 │ ├── factory.js
-
 │ ├── command.js
-
 │ ├── strategy.js
-
 │ ├── decorator.js (sin uso)
-
 │ └── observer.js (sin uso)
-
-└── ui/
-
+├── ui/
 ├── domFacade.js
-
 └── taskListView.js
-
+```
