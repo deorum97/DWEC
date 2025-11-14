@@ -1,0 +1,13 @@
+main {
+  display: grid;
+  justify-content: center;
+}
+
+label,
+button {
+  margin: auto;
+  margin-bottom: 2em;
+}
+button {
+  width: fit-content;
+}
