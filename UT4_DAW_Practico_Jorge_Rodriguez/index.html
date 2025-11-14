@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer type="module" src="main.js"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Registrar nuevo Pokémon</h2>
+            <label>
+                <input type="text" name="nombrePokemon" id="nombrePokemon">
+            </label>
+            <label>
+                <select name="tipoPokemon" id="tipoPokemon">
+                    <option value="fuego">🔥 Fuego</option>
+                    <option value="agua">💧 Agua</option>
+                    <option value="planta">🌿 Planta</option>
+                </select>
+            <label>
+            <label>
+                <input type="text" name="nivelPokemon" id="nivelPokemon">
+            </label>
+            <button id="crearPokemon">Añadir Pokémon</button>
+        </section>
+        <section>
+            <h2>Estadísticas</h2>
+            <section id="estadísticasPokemon"></section>
+            
+            <button id="generarEstadistica">Generar Estadistica</button>
+            <button id="borrarPokemons">Borra todos los pokemons</button>
+            
+        </section>
+        <section>
+            <h2>Lista de Pokémon</h2>
+            <input type="text" name="filtroPokemon" id="filtroPokemon">
+            <section id="sectionPokemon"></section>
+        </section>
+    </main>
+</body>
+</html>
