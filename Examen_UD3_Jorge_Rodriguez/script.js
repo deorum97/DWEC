@@ -82,8 +82,9 @@ function addTren(objTren) {
     `Velocidad: ${objTren.velocidadTren}`
   );
   const TextoFechaTrenDiv = document.createTextNode(
-    `Fecha de alta: ${objTren.fechaActual.getDate()} /${objTren.fechaActual.getMonth()} /
-      ${objTren.fechaActual.getFullYear()}`
+    // `Fecha de alta: ${objTren.fechaActual.getDate()} /${objTren.fechaActual.getMonth()} /
+    //  ${objTren.fechaActual.getFullYear()}`
+    ""
   );
 
   nombreTrenDiv.appendChild(TextoNombreTrenDiv);
@@ -120,25 +121,11 @@ function loadHistoric() {
   let stringHistoric = localStorage.getItem(HISTORIC_KEY);
   if (stringHistoric !== null) {
     arrayHistorico = JSON.parse(stringHistoric);
-    for (let index = 0; index < arrayHistorico.length; index++) {
-      const element = arrayHistorico[index];
-      addTren(
-        new Tren(
-          element.nombreTren,
-          element.velocidadTren,
-          element.tipoTren,
-          new Date(Date.parse(element.fechaActual))
-        )
-      );
-      addSelectTren(
-        new Tren(
-          element.nombreTren,
-          element.velocidadTren,
-          element.tipoTren,
-          new Date(Date.parse(element.fechaActual))
-        )
-      );
-    }
+
+    arrayHistorico.forEach((element) => {
+      addTren(element);
+      addSelectTren(element);
+    });
   }
 }
 

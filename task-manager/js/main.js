@@ -1,6 +1,5 @@
 "use strict";
 
-import { HISTORIC_KEY } from "./models/constants.js";
 import { DomFacade } from "./ui/domFacade.js";
 import { TaskManager } from "./ui/taskListView.js";
 import { TareaStrategy, FilterTaskPriority } from "./patterns/strategy.js";
