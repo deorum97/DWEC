@@ -21,7 +21,7 @@ class DomFacade {
     const textoPrioridadTarea = document.createTextNode(tarea.priority);
     const doneTarea = document.createElement("p");
     const textoDoneTarea = document.createTextNode(
-      tarea.done ? "true" : "false"
+      tarea.done ? "Completada" : "Sin completar"
     );
 
     botonBorrar.addEventListener("click", (event) => {

@@ -1,10 +1,6 @@
 import { HISTORIC_KEY } from "../models/constants.js";
 
 class TaskManager {
-  // constructor() {
-  //   this.tareas = this.cargarTareas();
-  // }
-
   constructor() {
     if (!TaskManager.instance) {
       TaskManager.instance = this;
