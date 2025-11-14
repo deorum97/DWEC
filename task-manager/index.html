@@ -9,31 +9,35 @@
   </head>
   <body>
     <main>
-      <label for="titulo"
-        >Título
-        <input type="text" name="titulo" id="titulo" />
-      </label>
-      <label for="descripcion"
-        >descripcion
-        <input type="text" name="descripcion" id="descripcion" />
-      </label>
-      <label for="prioridad"
-        >Prioridad
-        <select name="prioridad" id="prioridad">
+      <section class="primerForm">
+        <label for="titulo"
+          >Título
+          <input type="text" name="titulo" id="titulo" />
+        </label>
+        <label for="descripcion"
+          >descripcion
+          <input type="text" name="descripcion" id="descripcion" />
+        </label>
+        <label for="prioridad"
+          >Prioridad
+          <select name="prioridad" id="prioridad">
+            <option name="low">Low</option>
+            <option name="medium">Medium</option>
+            <option name="High">High</option>
+          </select>
+        </label>
+        <button id="crearTarea">crear</button>
+        <section id="listaTareas"></section>
+      </section>
+      <section class="segundoForm">
+        <select name="filtroPrioridad" id="filtroPrioridad">
           <option name="low">Low</option>
           <option name="medium">Medium</option>
           <option name="High">High</option>
         </select>
-      </label>
-      <button id="crearTarea">crear</button>
-      <section id="listaTareas"></section>
-      <select name="filtroPrioridad" id="filtroPrioridad">
-        <option name="low">Low</option>
-        <option name="medium">Medium</option>
-        <option name="High">High</option>
-      </select>
-      <button id="botonFiltro">Filtrar</button>
-      <section id="listaFiltroTareas"></section>
+        <button id="botonFiltro">Filtrar</button>
+        <section id="listaFiltroTareas"></section>
+      </section>
     </main>
   </body>
 </html>

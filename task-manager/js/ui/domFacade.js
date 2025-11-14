@@ -56,9 +56,9 @@ class DomFacade {
   mostarListaFiltrada(lista) {
     const section = document.getElementById("listaFiltroTareas");
     section.innerHTML = "";
-    const divListaTareas = document.createElement("div");
 
     lista.forEach((element) => {
+      const divListaTareas = document.createElement("div");
       const nombreTarea = document.createElement("p");
       const textoNombreTarea = document.createTextNode(element.title);
       const descripcionTarea = document.createElement("p");
@@ -75,8 +75,9 @@ class DomFacade {
       divListaTareas.appendChild(nombreTarea);
       divListaTareas.appendChild(descripcionTarea);
       divListaTareas.appendChild(prioridadTarea);
+
+      section.appendChild(divListaTareas);
     });
-    section.appendChild(divListaTareas);
   }
 
   recargarDomListas(arrayHistorico) {

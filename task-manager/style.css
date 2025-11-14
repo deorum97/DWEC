@@ -5,15 +5,64 @@
 
   div {
     border: 1px solid black;
+    margin-block: 1em;
+    width: 10em;
+    border-radius: 15px;
+    background-color: white;
 
     p:first-child {
       background-color: lightgrey;
       margin-top: 0;
-      padding: 5px;
+      padding: 0.5em;
+      border-radius: 15px 15px 0 0;
     }
 
     p {
-      padding: 5px;
+      padding: 0.5em;
+      margin-block: 0.5em;
+    }
+    button {
+      margin-block: 1em;
+      margin-left: 1em;
+    }
+  }
+}
+.primerForm {
+  border-radius: 15px;
+  background-color: lightblue;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid black;
+}
+.segundoForm {
+  border-radius: 15px;
+  background-color: lightgrey;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid black;
+}
+
+#listaFiltroTareas {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+
+  div {
+    border: 1px solid black;
+    margin-block: 1em;
+    width: 10em;
+    border-radius: 15px;
+    background-color: white;
+
+    p:first-child {
+      background-color: lightgrey;
+      margin-top: 0;
+      padding: 0.5em;
+      border-radius: 15px 15px 0 0;
+    }
+
+    p {
+      padding: 0.5em;
     }
   }
 }
