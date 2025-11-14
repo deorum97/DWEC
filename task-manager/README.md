@@ -12,21 +12,40 @@ Para ejecutarlo solo hace falta crear las tareas con el propio formulario que ha
 En la parte inferior hay un select para que muetre las listas filtradas con lo que se quiera.
 
 task-manager-pro/
+
 │
+
 ├── index.html
+
 ├── style.css
+
 ├── README.md
+
 └── js/
+
 ├── main.js
+
 ├── models/
+
 │ └── task.js
+
 │ └── constants.js
+
 ├── patterns/
+
 │ ├── factory.js
+
 │ ├── command.js
+
 │ ├── strategy.js
+
 │ ├── decorator.js (sin uso)
+
 │ └── observer.js (sin uso)
+
 └── ui/
+
 ├── domFacade.js
+
 └── taskListView.js
+
