@@ -9,8 +9,5 @@ const registroFacade = new RegistroFacade();
 let arrayUsuario = [];
 arrayUsuario = managerUsuario.cargarUsuario();
 
-if (!arrayUsuario) {
-  registroFacade.renderRegistro();
-} else {
-  registroFacade.renderLogin();
-}
+registroFacade.renderRegistro();
+registroFacade.renderLogin();
