@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+}
+main {
+  display: flex;
+}
+.aside_juego {
+  width: 20%;
+}
+.section_juego {
+  width: 80%;
+}
