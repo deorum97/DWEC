@@ -12,12 +12,20 @@
       <section class="top_section">
         <aside class="aside_juego">
           <div>
-            <p>Mejor resultado:</p>
-            <p></p>
+            <pre>Mejor resultado: </pre>
+            <p id="mejor"></p>
           </div>
           <div>
-            <p>Puntuación:</p>
-            <p></p>
+            <pre>Ultima Partida: </pre>
+            <p id="ultima"></p>
+          </div>
+          <div>
+            <pre>Puntuación: </pre>
+            <p id="puntos"></p>
+          </div>
+          <div class="vidas">
+            <pre>Vidas: </pre>
+            <p id="vidas"></p>
           </div>
         </aside>
         <section class="section_juego" id="juego"></section>
@@ -26,5 +34,15 @@
         <input type="text" id="adivinaPalabra" placeholder="Palabra" />
       </section>
     </main>
+    <section id="gameOver" class="gameOver">
+      <p id="gameOverUltimaPuntuacion"></p>
+      <p id="gameOverMejorPuntuacion"></p>
+      <button class="reiniciarPartida" id="reiniciarPartida">
+        Reiniciar juego
+      </button>
+      <button class="cambiarUsuario" id="cambiarUsuario">
+        Cambiar de usuario
+      </button>
+    </section>
   </body>
 </html>

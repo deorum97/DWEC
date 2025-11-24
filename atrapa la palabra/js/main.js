@@ -3,8 +3,10 @@
 import { UsuarioManager } from "./managerUsuario.js";
 import { Validators } from "../utilities/validators.js";
 import { Usuario } from "../model/user.js";
+import { RegistroFacade } from "../facades/DOMRegistroFacade.js";
 
 const managerUsuario = new UsuarioManager();
+const registroFacade = new RegistroFacade();
 
 const formRegistro = document.getElementById("formRegistro");
 const btnRegistro = document.getElementById("btnRegistro");

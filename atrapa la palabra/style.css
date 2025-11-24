@@ -1,15 +1,24 @@
 body {
   margin: 0;
 }
+
+pre {
+  font-family: Arial, Helvetica, sans-serif;
+}
 .top_section {
   display: flex;
 }
 .aside_juego {
   width: 20%;
+  div {
+    display: flex;
+    flex-direction: row;
+  }
 }
 .section_juego {
   width: 80%;
   height: 100dvh;
+  position: relative;
 }
 
 .input_palabra {
@@ -17,4 +26,12 @@ body {
   bottom: 1em;
   left: 50%;
   transform: translate(-50%);
+}
+
+.gameOver {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

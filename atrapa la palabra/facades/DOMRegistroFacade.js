@@ -39,7 +39,7 @@ class RegistroFacade {
       "<label>Contraseña<input type='password' name='clave' id='clave'/></label>" +
       "<button id='btnRegistro'>Enviar</button>" +
       "</form>";
-    document.getElementById("btnLogueo").addEventListener("click", (e) => {
+    document.getElementById("btnRegistro").addEventListener("click", (e) => {
       e.preventDefault();
       const user = document.getElementById("user");
       const clave = document.getElementById("clave");
