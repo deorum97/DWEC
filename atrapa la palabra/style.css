@@ -1,7 +1,7 @@
 body {
   margin: 0;
 }
-main {
+.top_section {
   display: flex;
 }
 .aside_juego {
@@ -9,4 +9,12 @@ main {
 }
 .section_juego {
   width: 80%;
+  height: 100dvh;
+}
+
+.input_palabra {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translate(-50%);
 }
