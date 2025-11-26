@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer type="module" src="js/gameControler.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <form id="formGlobos">
+        <label for="numero de globos">
+          <input type="number" id="numGlobos" />
+        </label>
+        <button id="submitGlobos" type="button">Adelante!</button>
+      </form>
+      <section class="sectionGlobos" id="sectionGlobos"></section>
+
+      <div style="visibility: hidden" class="puntuacion" id="puntuacion">
+        <p>puntos:</p>
+        <p id="puntos"></p>
+      </div>
+    </main>
+  </body>
+</html>
