@@ -57,11 +57,11 @@ function nuevaPalabra() {
 
 function movimiento() {
   Array.from(juego.children).forEach((element) => {
-    element.style.top = parseInt(element.style.top) + 1 + "px";
+    element.style.top = parseFloat(element.style.top) + 0.03 + "%";
     const contenedorAltura = juego.clientHeight;
-    const elementoBottom = parseInt(element.style.top) + element.offsetHeight;
+    const elementoBottom = parseFloat(element.style.top) + element.offsetHeight;
 
-    if (elementoBottom >= contenedorAltura) {
+    if (parseFloat(element.style.top) >= 95) {
       //console.log("¡La palabra tocó el fondo!");
       restarVida(vidas);
       element.remove();
@@ -110,12 +110,13 @@ function reiniciarJuego() {
   vidas = 3;
   puntos = 0;
   velocidad = 4000;
+  adivinaPalabra.disabled = false;
   facade.reinicio();
   intervaloPalabras = setInterval(() => nuevaPalabra(), velocidad);
   intervaloMovimiento = setInterval(() => movimiento(), 2);
 }
 
-export function palabraSeleccionada() {
+function palabraSeleccionada() {
   Array.from(juego.children).forEach((element) => {
     if (adivinaPalabra.value === element.textContent) {
       element.remove();
@@ -125,3 +126,5 @@ export function palabraSeleccionada() {
     }
   });
 }
+
+export { palabraSeleccionada };

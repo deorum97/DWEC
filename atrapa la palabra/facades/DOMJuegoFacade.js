@@ -23,7 +23,7 @@ class DOMJuegoFacade {
   mostrarPalabra(palabra) {
     const divPalabra = document.createElement("div");
     divPalabra.style.position = "absolute";
-    divPalabra.style.top = 0;
+    divPalabra.style.top = "0%";
     divPalabra.style.left =
       Math.floor(Math.random() * (this.juego.clientWidth - 50)) + "px";
     const contenedorPalabra = document.createElement("p");

@@ -1,4 +1,4 @@
-import { UsuarioManager } from "../managerUsuario.js";
+import { UsuarioManager } from "../js/managerUsuario.js";
 import { Usuario } from "../model/user.js";
 import { Validators } from "../utilities/validators.js";
 
