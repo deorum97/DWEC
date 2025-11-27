@@ -2,7 +2,12 @@ import { UsuarioManager } from "./managerUsuario.js";
 import { Validators } from "../utilities/validators.js";
 import { Usuario } from "../model/user.js";
 
+let user = null;
 const managerUsuario = new UsuarioManager();
+user = managerUsuario.getUsuario();
+if (user) {
+  window.location.href = "lobby.html";
+}
 
 const formRegistro = document.getElementById("formRegistro");
 const btnRegistro = document.getElementById("btnRegistro");

@@ -1,6 +1,6 @@
 "use strict";
 
-import { HISTORIC_USER } from "../model/constants.js";
+import { HISTORIC_USER, HISTORIC_USERL } from "../model/constants.js";
 
 class UsuarioManager {
   constructor() {
@@ -25,10 +25,16 @@ class UsuarioManager {
     return clave === claveR ? true : false;
   }
 
+  getUsuario() {
+    const stringUsuario = sessionStorage.getItem(HISTORIC_USERL);
+    return stringUsuario ? JSON.stringify(stringUsuario) : null;
+  }
+
   loguearUsuario(nombre, clave) {
     this.array.forEach((element) => {
       if (element.nombre === nombre && element.clave === clave) {
-        window.location.href = "juego.html";
+        sessionStorage.setItem(HISTORIC_USERL, element.nombre);
+        window.location.href = "lobby.html";
       }
     });
   }

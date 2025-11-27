@@ -9,17 +9,21 @@
   </head>
   <body>
     <main>
-      <form id="formGlobos">
+      <form id="formGlobos" class="flip-card">
         <label for="numero de globos">
-          <input type="number" id="numGlobos" />
+          <input type="number" id="numGlobos" class="flip-card__input" />
         </label>
-        <button id="submitGlobos" type="button">Adelante!</button>
+        <button id="submitGlobos" type="button" class="flip-card__btn">
+          Adelante!
+        </button>
       </form>
       <section class="sectionGlobos" id="sectionGlobos"></section>
 
-      <div style="visibility: hidden" class="puntuacion" id="puntuacion">
+      <div style="visibility: hidden" class="flip-card" id="puntuacion">
         <p>puntos:</p>
         <p id="puntos"></p>
+        <p id="fallos"></p>
+        <p id="puntuacionFinal"></p>
       </div>
     </main>
   </body>
