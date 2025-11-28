@@ -2,8 +2,16 @@
 
 import { GlobosFacade } from "../facade/globosFacade.js";
 import { Validators } from "../utilities/validators.js";
+import { desloguear } from "./deslogueo.js";
+import { UsuarioManager } from "./managerUsuario.js";
 
 const facade = new GlobosFacade();
+
+const managerUsuario = new UsuarioManager();
+user = managerUsuario.getUsuario();
+if (!user) {
+  window.location.href = "index.html";
+}
 
 let puntos = 0;
 let fallos = 0;
@@ -19,6 +27,11 @@ const sectionGlobos = document.getElementById("sectionGlobos");
 const buttonEnviar = document.getElementById("submitGlobos");
 const inputGlobos = document.getElementById("numGlobos");
 const formGlobos = document.getElementById("formGlobos");
+
+const btnDeslogueo = document.getElementById("cambiarUsuario");
+btnDeslogueo.addEventListener("click", (e) => {
+  desloguear();
+});
 
 buttonEnviar.addEventListener("click", (e) => {
   e.preventDefault;

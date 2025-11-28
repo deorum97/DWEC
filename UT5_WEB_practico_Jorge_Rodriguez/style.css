@@ -29,7 +29,6 @@ main {
 }
 /* Contenedor tipo tarjeta */
 .flip-card {
-  width: 300px;
   margin: auto;
   padding: 25px;
   background: #d9d9d9;
@@ -55,7 +54,8 @@ main {
 }
 
 /* Inputs */
-.flip-card__input {
+.flip-card__input,
+.flip-card__res {
   width: 90%;
   padding: 12px;
   margin: 10px 0;
@@ -64,6 +64,13 @@ main {
   box-shadow: 5px 5px 0px #000;
   font-size: 16px;
   outline: none;
+}
+
+.flip-card__res {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  padding-inline: 20px;
 }
 
 /* Estilo del label + checkbox */

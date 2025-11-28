@@ -20,10 +20,21 @@
       <section class="sectionGlobos" id="sectionGlobos"></section>
 
       <div style="visibility: hidden" class="flip-card" id="puntuacion">
-        <p>puntos:</p>
-        <p id="puntos"></p>
-        <p id="fallos"></p>
-        <p id="puntuacionFinal"></p>
+        <div class="flip-card__res">
+          <pre>aciertos: </pre>
+          <p id="puntos"></p>
+          <pre>, Fallos: </pre>
+          <p id="fallos"></p>
+          <pre>, Puntuacion Final: </pre>
+          <p id="puntuacionFinal"></p>
+        </div>
+
+        <button class="flip-card__btn" id="reiniciarPartida">
+          Reiniciar juego
+        </button>
+        <button class="flip-card__btn" id="cambiarUsuario">
+          Cambiar de usuario
+        </button>
       </div>
     </main>
   </body>

@@ -63,5 +63,28 @@ pre {
   position: absolute;
   top: 50%;
   left: 50%;
+  padding: 25px;
+  background: #d9d9d9;
+  border: 2px solid #000;
+  border-radius: 6px;
+  box-shadow: 5px 5px 0px #000;
   transform: translate(-50%, -50%);
+}
+/* Botón */
+.flip-card__btn {
+  margin-top: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px #000;
+  transition: transform 0.1s ease;
+}
+
+/* Efecto al pulsar */
+.flip-card__btn:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px #000;
 }

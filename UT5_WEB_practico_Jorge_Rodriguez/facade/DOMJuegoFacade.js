@@ -34,6 +34,7 @@ class DOMJuegoFacade {
     divPalabra.style.left =
       Math.floor(Math.random() * (this.juego.clientWidth - 50)) + "px";
     const contenedorPalabra = document.createElement("p");
+    contenedorPalabra.style.margin = 0;
     const textoPalabra = document.createTextNode(palabra);
     contenedorPalabra.appendChild(textoPalabra);
     divPalabra.appendChild(contenedorPalabra);

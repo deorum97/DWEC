@@ -3,11 +3,21 @@
 import { faker } from "https://cdn.jsdelivr.net/npm/@faker-js/faker/+esm";
 import { DOMJuegoFacade } from "../facade/DOMJuegoFacade.js";
 import { HISTORIC_BEST, HISTORIC_LAST } from "../model/constants.js";
+import { UsuarioManager } from "./managerUsuario.js";
+import { desloguear } from "../utilities/deslogueo.js";
+
+let user = null;
 
 const adivinaPalabra = document.getElementById("adivinaPalabra");
 const juego = document.getElementById("juego");
 
 const facade = new DOMJuegoFacade();
+
+const managerUsuario = new UsuarioManager();
+user = managerUsuario.getUsuario();
+if (!user) {
+  window.location.href = "index.html";
+}
 
 let vidas = 3;
 let puntos = 0;
@@ -17,6 +27,11 @@ let intervaloPalabras;
 let intervaloMovimiento;
 
 nuevoJuego();
+
+const btnDeslogueoPalabra = document.getElementById("cambiarUsuario");
+btnDeslogueoPalabra.addEventListener("click", (e) => {
+  desloguear();
+});
 
 const botonReinicio = document.getElementById("reiniciarPartida");
 botonReinicio.addEventListener("click", (e) => reiniciarJuego());
