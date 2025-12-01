@@ -2,10 +2,12 @@
 
 import { GlobosFacade } from "../facade/globosFacade.js";
 import { Validators } from "../utilities/validators.js";
-import { desloguear } from "./deslogueo.js";
+import { desloguear } from "../utilities/deslogueo.js";
 import { UsuarioManager } from "./managerUsuario.js";
 
 const facade = new GlobosFacade();
+
+let user = null;
 
 const managerUsuario = new UsuarioManager();
 user = managerUsuario.getUsuario();
@@ -33,6 +35,11 @@ btnDeslogueo.addEventListener("click", (e) => {
   desloguear();
 });
 
+const btnReinicio = document.getElementById("reiniciarPartida");
+btnReinicio.addEventListener("click", (e) => {
+  reiniciarJuego();
+});
+
 buttonEnviar.addEventListener("click", (e) => {
   e.preventDefault;
   Validators.validateNumGlobos(inputGlobos);
@@ -48,6 +55,18 @@ buttonEnviar.addEventListener("click", (e) => {
 function iniciarJuego(numGlobos) {
   facade.renderGlobos(numGlobos);
   intervaloMovimiento = setInterval(() => moverGlobo(), 100);
+}
+
+function reiniciarJuego() {
+  puntos = 0;
+  fallos = 0;
+  duplica = false;
+  totalGlobosBueno = 0;
+  tiempo = 0;
+  amarillPop = false;
+  clearInterval(intervaloMovimiento);
+  facade.reiniciar();
+  iniciarJuego(inputGlobos.value);
 }
 
 function moverGlobo() {
@@ -129,7 +148,7 @@ function reponerTiempo() {
 }
 
 function calcularPuntos() {
-  const puntuacion = parseInt(100 / tiempo + puntos * 10 - fallos * 5);
+  const puntuacion = parseInt(1000 / tiempo + puntos * 10 - fallos * 5);
   if (duplica) {
     return puntuacion * 2;
   } else {

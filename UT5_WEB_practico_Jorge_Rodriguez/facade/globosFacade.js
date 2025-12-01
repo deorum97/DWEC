@@ -111,6 +111,12 @@ class GlobosFacade {
     puntuacionFinal.innerHTML = "";
     puntuacionFinal.innerHTML = punt;
   }
+
+  reiniciar() {
+    const puntuacion = document.getElementById("puntuacion");
+    puntuacion.style.visibility = "hidden";
+    this.globoAmarillo = false;
+  }
 }
 
 export { GlobosFacade };

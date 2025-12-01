@@ -31,6 +31,7 @@ btnRegistro.addEventListener("click", (e) => {
   } else {
     const user = new Usuario(registroUser.value, registroClave.value);
     managerUsuario.guardarNuevoUsuario(user);
+    managerUsuario.loguearUsuario(registroUser.value, registroClave.value);
   }
 });
 
