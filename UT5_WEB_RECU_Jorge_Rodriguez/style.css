@@ -1,0 +1,17 @@
+label {
+  display: block;
+}
+#celdas {
+  display: grid;
+  gap: 5px;
+}
+div {
+  width: 100px;
+  height: 100px;
+  background: lightgrey;
+}
+img {
+  width: 100px;
+  height: 100px;
+  visibility: hidden;
+}
