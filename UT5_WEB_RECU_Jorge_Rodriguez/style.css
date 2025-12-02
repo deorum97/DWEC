@@ -4,14 +4,54 @@ label {
 #celdas {
   display: grid;
   gap: 5px;
+  div {
+    width: 100px;
+    height: 100px;
+    background: lightgrey;
+    background-size: cover;
+  }
 }
-div {
-  width: 100px;
-  height: 100px;
-  background: lightgrey;
+
+.puntuacion {
+  display: flex;
+  flex-direction: row;
 }
-img {
+
+/* img {
   width: 100px;
   height: 100px;
   visibility: hidden;
+} */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 250px;
+  box-shadow: 0 0 10px black;
+  font-size: 18px;
+}
+
+.popup button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  border: none;
+  background: #5b8cff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }

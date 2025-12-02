@@ -4,30 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script defer type="module" src="js/main.js"></script>
+    <script defer type="module" src="js/main2.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
-      <form action="" id="formBarco">
-        <label for=""
-          >Num de filas:
-          <input type="number" name="numFilas" id="numFilas" />
-        </label>
-        <label for=""
-          >Num de Columnas:
-          <input type="number" name="numColumnas" id="numColumnas" />
-        </label>
-        <label for=""
-          >Velocidad del hunter:
-          <input type="number" name="numVelocidad" id="numVelocidad" />
-        </label>
-        <label for=""
-          >Num de bombas:
-          <input type="number" name="numBombas" id="numBombas" />
-        </label>
-        <input type="submit" id="btnEnviar" />
-      </form>
+      <section class="popup" id="popup">
+        <div class="popup-content">
+          <p>Has perdido</p>
+          <button id="btnReinicio">Vover a jugar</button>
+        </div>
+      </section>
+      <section>
+        <form action="" id="formBarco">
+          <label for=""
+            >Num de filas:
+            <input type="number" name="numFilas" id="numFilas" />
+          </label>
+          <label for=""
+            >Num de Columnas:
+            <input type="number" name="numColumnas" id="numColumnas" />
+          </label>
+          <label for=""
+            >Velocidad del hunter:
+            <input type="number" name="numVelocidad" id="numVelocidad" />
+          </label>
+          <label for=""
+            >Num de bombas:
+            <input type="number" name="numBombas" id="numBombas" />
+          </label>
+          <input type="submit" id="btnEnviar" />
+        </form>
+      </section>
+      <div class="puntuacion">
+        <p>Capturas:</p>
+        <p id="puntos"></p>
+      </div>
+      <div class="puntuacion">
+        <p>Vidas:</p>
+        <p id="vidas"></p>
+      </div>
       <section id="celdas"></section>
     </main>
   </body>

@@ -6,7 +6,7 @@ import { Facade } from "./facade.js";
 let casillaHunter = null;
 let intervaloMovimiento = null;
 let array = [];
-let casillasSeleccoinadas = [];
+let casillasSeleccionadas = [];
 let vidas = 0;
 let puntos = 0;
 
@@ -39,20 +39,18 @@ function nuevoJuego() {
   casillaHunter = Math.round(
     Math.random() * (numFilas.value * numColumnas.value)
   );
-  let casillaHunter = null;
-  let intervaloMovimiento = null;
-  let array = [];
-  let casillasSeleccoinadas = [];
-  let vidas = 3;
-  let puntos = 0;
+  vidas = 3;
   calcularBombas();
   facade.renderCeldas(
     numFilas.value,
     numColumnas.value,
     casillaHunter,
     array,
-    casillasSeleccoinadas
+    casillasSeleccionadas
   );
+
+  facade.mostrarVidas(vidas);
+  facade.mostrarPuntos(puntos);
   intervaloMovimiento = setInterval(
     () => movimientoBarco(),
     parseInt(numVelocidad.value)
@@ -62,19 +60,18 @@ function nuevoJuegoplus() {
   casillaHunter = Math.round(
     Math.random() * (numFilas.value * numColumnas.value)
   );
-  let casillaHunter = null;
-  let intervaloMovimiento = null;
-  let array = [];
-  let casillasSeleccoinadas = [];
-  let vidas = 3;
+  array = [];
+  casillasSeleccionadas = [];
   calcularBombas();
   facade.renderCeldas(
     numFilas.value,
     numColumnas.value,
     casillaHunter,
     array,
-    casillasSeleccoinadas
+    casillasSeleccionadas
   );
+  facade.mostrarVidas(vidas);
+  facade.mostrarPuntos(puntos);
   intervaloMovimiento = setInterval(
     () => movimientoBarco(),
     parseInt(numVelocidad.value)
@@ -105,7 +102,7 @@ function movimientoBarco() {
       numColumnas.value,
       nuevaCelda,
       array,
-      casillasSeleccoinadas
+      casillasSeleccionadas
     );
   }
 }
@@ -117,28 +114,32 @@ export function clickCelda(e) {
   Array.from(celda.children).forEach((element) => {
     if (element.getAttribute("src") === "img/square.png") {
       element.style.visibility = "visible";
-      casillasSeleccoinadas.push(index);
+      casillasSeleccionadas.push(index);
     } else if (element.getAttribute("src") === "img/error.png") {
       element.style.visibility = "visible";
-      casillasSeleccoinadas.push(index);
+      casillasSeleccionadas.push(index);
       vidas--;
+      facade.mostrarVidas(vidas);
+
       if (vidas === 0) {
         gameOver();
       }
-    } else {
+    } else if (element.getAttribute("src") === "img/boat.png") {
       puntos++;
+      facade.mostrarPuntos(puntos);
+
       if (puntos === 10) {
         win();
       }
+      alert("Has dado al hunter! ");
       nuevoJuegoplus();
-      window.alert("Has dado al hunter! ");
     }
   });
 }
 
 function gameOver() {
-  window.alert("Has perdido!!!");
+  alert("Has perdido!!!");
 }
 function win() {
-  window.alert("Has ganado!!!");
+  alert("Has ganado!!!");
 }
