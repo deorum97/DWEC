@@ -1,5 +1,5 @@
 "use strict";
-import { clickCelda } from "./main2.js";
+import { clickCelda } from "./main.js";
 class Facade {
   renderCeldas(numFilas, numColumnas) {
     const celdas = document.getElementById("celdas");
@@ -26,14 +26,14 @@ class Facade {
     pVidas.innerHTML = vidas;
   }
 
-  mostrarPuntos(puntos) {
-    const pPuntos = document.getElementById("puntos");
-    pPuntos.innerHTML = puntos;
-  }
-
   mostrarTiempo(tiempo) {
     const pTiempo = document.getElementById("tiempo");
     pTiempo.innerHTML = tiempo;
+  }
+
+  mostrarCapturas(capturas) {
+    const pCapturas = document.getElementById("capturas");
+    pCapturas.innerHTML = capturas;
   }
 }
 

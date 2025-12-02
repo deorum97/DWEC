@@ -12,9 +12,17 @@ label {
   }
 }
 
+.puntuaciones {
+  border: 1px solid lightblue;
+  width: fit-content;
+}
 .puntuacion {
   display: flex;
   flex-direction: row;
+  margin-block: 0;
+  p {
+    margin: 5px;
+  }
 }
 
 /* img {

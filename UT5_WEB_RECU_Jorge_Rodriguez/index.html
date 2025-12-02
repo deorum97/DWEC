@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script defer type="module" src="js/main2.js"></script>
+    <script defer type="module" src="js/main.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -36,18 +36,21 @@
           <input type="submit" id="btnEnviar" />
         </form>
       </section>
-      <div class="puntuacion">
-        <p>Capturas:</p>
-        <p id="puntos"></p>
-      </div>
-      <div class="puntuacion">
-        <p>Vidas:</p>
-        <p id="vidas"></p>
-      </div>
-      <div class="puntuacion">
-        <p>Tiempo actual:</p>
-        <p id="tiempo"></p>
-      </div>
+      <section class="puntuaciones">
+        <div class="puntuacion">
+          <p>Vidas:</p>
+          <p id="vidas"></p>
+        </div>
+        <div class="puntuacion">
+          <p>Capturas de hunter:</p>
+          <p id="capturas"></p>
+          <p>/10</p>
+        </div>
+        <div class="puntuacion">
+          <p>Tiempo actual:</p>
+          <p id="tiempo"></p>
+        </div>
+      </section>
       <section id="celdas"></section>
     </main>
   </body>
