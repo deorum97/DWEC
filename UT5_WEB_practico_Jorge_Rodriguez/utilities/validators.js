@@ -36,7 +36,7 @@ class Validators {
       numGlobos.setCustomValidity(
         "Los globos deben ser menos o iguales a " + max
       );
-    } else if (parseInt(numGlobos.value) < 15) {
+    } else if (parseInt(numGlobos.value) < 10) {
       numGlobos.setCustomValidity(
         "Los globos deben ser mayores o iguales a " + max
       );

@@ -1,20 +1,32 @@
 "use strict";
 
+import { Form } from "../model/form.js";
 import { Validators } from "../utilities/validator.js";
+import {
+  HISTORIC_BEST_TIME,
+  HISTORIC_CAPTURAS,
+  HISTORIC_FORM,
+} from "./constants.js";
 import { Facade } from "./facade.js";
 
 let casillaHunter = null;
 let intervaloMovimiento = null;
+let intervaloTiempoActual = null;
 let arrayBombas = [];
 let casillasSeleccionadas = [];
 let vidas = 3;
 let puntos = 0;
 let velocidadBarco = null;
 
+let tiempoActual = 0;
+
 const facade = new Facade();
+
+const loadFormulario = loadLocalStorageForm();
 
 facade.mostrarVidas(vidas);
 facade.mostrarPuntos(puntos);
+facade.mostrarTiempo(tiempoActual);
 
 const numFilas = document.getElementById("numFilas");
 const numColumnas = document.getElementById("numColumnas");
@@ -26,6 +38,13 @@ const formBarco = document.getElementById("formBarco");
 const btnEnviar = document.getElementById("btnEnviar");
 
 const btnReinicio = document.getElementById("btnReinicio");
+
+if (loadFormulario) {
+  numFilas.value = loadFormulario.filas;
+  numColumnas.value = loadFormulario.columnas;
+  numVelocidad.value = loadFormulario.velocidad;
+  numBombas.value = loadFormulario.trampas;
+}
 
 btnReinicio.addEventListener("click", (e) => {
   reinicio();
@@ -41,6 +60,7 @@ btnEnviar.addEventListener("click", (e) => {
   if (!formBarco.checkValidity()) {
     formBarco.reportValidity();
   } else {
+    saveLocalStorageForm();
     velocidadBarco = parseInt(numVelocidad.value);
 
     nuevoJuego();
@@ -57,6 +77,13 @@ function nuevoJuego() {
     () => movimientoBarco(),
     parseInt(numVelocidad.value)
   );
+  intervaloTiempoActual = setInterval(() => aumentarTiempo(), 100);
+}
+
+function aumentarTiempo() {
+  tiempoActual += 0.1;
+
+  facade.mostrarTiempo(tiempoActual.toFixed(1));
 }
 
 function calcularBombas() {
@@ -106,7 +133,11 @@ export function clickCelda(e) {
     facade.mostrarPuntos(puntos);
     clearInterval(intervaloMovimiento);
     alert("has capturado al hunter!!");
-    continuarJuego();
+    if (puntos === 10) {
+      win();
+    } else {
+      continuarJuego();
+    }
   } else {
     celda.style.background = "url('img/square.png')";
     celda.style.backgroundSize = "cover";
@@ -118,7 +149,7 @@ function continuarJuego() {
   casillaHunter = Math.round(
     Math.random() * (numFilas.value * numColumnas.value)
   );
-  velocidadBarco = parseInt(numVelocidad.value);
+  velocidadBarco = velocidadBarco - 50;
   calcularBombas();
   facade.renderCeldas(numFilas.value, numColumnas.value);
   intervaloMovimiento = setInterval(
@@ -138,5 +169,59 @@ function reinicio() {
 
 function gameOver() {
   document.getElementById("popup").style.display = "flex";
+  document.getElementById("popupTexto").innerHTML = "Has perdido!";
+
+  clearInterval(intervaloTiempoActual);
   clearInterval(intervaloMovimiento);
+  saveLocalStorageCapturas();
+}
+
+function win() {
+  document.getElementById("popup").style.display = "flex";
+  document.getElementById("popupTexto").innerHTML = "Has ganado!";
+
+  clearInterval(intervaloTiempoActual);
+  saveLocalStorageTiempo();
+  saveLocalStorageCapturas();
+}
+
+function saveLocalStorageForm() {
+  const formulario = new Form(
+    numFilas.value,
+    numColumnas.value,
+    numVelocidad.value,
+    numBombas.value
+  );
+  localStorage.setItem(HISTORIC_FORM, JSON.stringify(formulario));
+}
+
+function saveLocalStorageTiempo() {
+  const tiempo = loadLocalStorageTiempo();
+  if (tiempo >= tiempoActual) {
+    localStorage.setItem(HISTORIC_BEST_TIME, tiempoActual);
+  }
+}
+
+function saveLocalStorageCapturas() {
+  let capturas = loadLocalStorageCapturas();
+  capturas += puntos;
+  localStorage.setItem(HISTORIC_CAPTURAS, capturas);
+}
+
+function loadLocalStorageForm() {
+  const stringFormulario = localStorage.getItem(HISTORIC_FORM);
+
+  return stringFormulario ? JSON.parse(stringFormulario) : null;
+}
+
+function loadLocalStorageCapturas() {
+  const stringCapturas = localStorage.getItem(HISTORIC_CAPTURAS);
+
+  return stringCapturas ? JSON.parse(stringCapturas) : null;
+}
+
+function loadLocalStorageTiempo() {
+  const stringTiempo = localStorage.getItem(HISTORIC_BEST_TIME);
+
+  return stringTiempo ? JSON.parse(stringTiempo) : null;
 }
