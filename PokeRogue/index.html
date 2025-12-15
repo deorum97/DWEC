@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer type="module" src="js/main.css"></script>
+    <script defer type="module" src="js/main.js"></script>
   </head>
   <body>
     <main>
       <header>
         <nav class="enlaces">
-          <div><p>Battle</p></div>
-          <div><p>Team</p></div>
-          <div><p>Historic</p></div>
-          <div><p>Import</p></div>
+          <div id="battle"><p>Battle</p></div>
+          <div id="team"><p>Team</p></div>
+          <div id="historic"><p>Historic</p></div>
+          <div id="import"><p>Import</p></div>
         </nav>
       </header>
-      <section class="footer">
+      <section class="footer" id="footer">
         <div class="acciones">
           <button class="escape">Escapar</button>
           <button class="ataque">Atacar</button>
           <button class="capturar">Capturar</button>
+        </div>
+        <div class="progress">
+          <div class="progress-bar">
+            <div class="progress-complete"></div>
+          </div>
         </div>
       </section>
     </main>

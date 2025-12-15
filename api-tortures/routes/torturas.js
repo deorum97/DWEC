@@ -48,6 +48,7 @@ router.put("/:id", (req, res) => {
       tortura = new Tortura(
         arrayTorturas[index].id,
         req.body.nombre,
+
         req.body.annioCreacion,
         req.body.mortal,
         req.body.url,

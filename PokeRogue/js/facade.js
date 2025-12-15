@@ -1,7 +1,12 @@
 class Facade {
   showBattle() {
-    const section = document.createElement("section");
-    section.className = "footer";
+    const footer = document.getElementById("footer");
+    footer.style.visibility = "visible";
+  }
+
+  showTeam() {
+    const footer = document.getElementById("footer");
+    footer.style.visibility = "hidden";
   }
 }
 

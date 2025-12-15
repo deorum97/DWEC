@@ -92,3 +92,24 @@ header {
   background-color: purple;
   height: 3em;
 }
+
+.progress,
+.progress-bar,
+.progress-complete {
+  height: 25px;
+  border-radius: 15px;
+}
+
+.progress {
+  margin: 25px;
+  border: 2px solid black;
+}
+
+.progress-bar {
+  background-color: white;
+}
+
+.progress-complete {
+  background-color: blue;
+  width: 50%;
+}
