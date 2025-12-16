@@ -40,7 +40,7 @@ function mostrarCrear() {
 async function crearLibro(event) {
   event.preventDefault();
 
-  const response = await fetch("http://localhost:3000/libros", {
+  await fetch("http://localhost:3000/libros", {
     method: "POST",
     body: JSON.stringify({
       titulo: document.getElementById("titulo").value,
@@ -80,7 +80,7 @@ async function pintarLibros() {
     });
 }
 async function borrarLibro(id) {
-  const response = await fetch(`http://localhost:3000/libros/${id}`, {
+  await fetch(`http://localhost:3000/libros/${id}`, {
     method: "DELETE",
     headers: myHeaders,
   });
