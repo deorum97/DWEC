@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 
 let Libro = require("../models/libro");
-const arrayLibros = [];
+let arrayLibros = [];
 let contador = 0;
 
 /* GET home page. */
@@ -24,7 +24,7 @@ router.post("/", function (req, res, next) {
 
 router.delete("/:id", (req, res) => {
   let arrayLibrosFiltrado = arrayLibros.filter(
-    (x) => parseInt(x.id) != req.params.id
+    (x) => parseInt(x.id) != parseInt(req.params.id)
   );
   if (arrayLibrosFiltrado.length === arrayLibros.length) {
     res.status(404).send("Not Found");
