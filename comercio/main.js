@@ -71,11 +71,11 @@ async function pintarLibros() {
                 <td>${libro.titulo}</td>
                 <td>${libro.autor}</td>
                 <td>${libro.anio}</td>
-                <td><button id="botonBorrar">Borrar libro</button></td>
+                <td><button class="botonBorrar">Borrar libro</button></td>
             `;
         tbody.appendChild(fila);
-        const botonBorrar = document.getElementById("botonBorrar");
-        botonBorrar.addEventListener("click", borrarLibro(libro.id));
+        const botonBorrar = fila.querySelector(".botonBorrar");
+        botonBorrar.addEventListener("click", () => borrarLibro(libro.id));
       }
     });
 }
