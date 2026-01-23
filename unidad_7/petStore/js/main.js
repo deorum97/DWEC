@@ -2,11 +2,15 @@
 
 import { FacadeCard } from "../facade/DOMFacadeCard.js";
 import { API_URL, HISTORIC_USER } from "../model/constant.js";
+import { UsuarioManager } from "./managerUsuario.js";
 
-const facadeCard = new FacadeCard();
-const tcard = document.getElementById("tablaCard");
-const inputNombre = document.getElementById("user");
-const inputClave = document.getElementById("clave");
+let user = null;
+const managerUsuario = new UsuarioManager();
+user = managerUsuario.getUsuario();
+if (user) {
+  window.location.href = "listarPets.html";
+}
+
 document.getElementById("btnLogueo").addEventListener("click", loguearUsuario);
 document
   .getElementById("btnRegistro")
@@ -14,35 +18,25 @@ document
 
 async function registrarUsuario(event) {
   event.preventDefault();
+  const inputNombre = document.getElementById("registroUser");
   const inputClave = document.getElementById("registroClave");
   const inputClaveR = document.getElementById("registroClaveR");
-  if (inputClave !== inputClaveR) {
-    return;
-  }
-
-  const nombre = document.getElementById("user");
-  await PostLibro(libro);
-  event.target.reset();
-  mostrarConsultar();
+  managerUsuario.registrarUsuario(
+    inputNombre.value,
+    inputClave.value,
+    inputClaveR.value,
+  );
 }
 
 async function loguearUsuario(event) {
   event.preventDefault();
-  const requestUser = await fetch(
-    API_URL + "users/" + document.getElementById("user").value,
+  managerUsuario.loguearUsuario(
+    document.getElementById("user").value,
+    document.getElementById("clave").value,
   );
+}
 
-  if (!requestUser.ok) {
-    alert("Usuario no encontrado");
-    return;
-  }
-
-  const user = await requestUser.json();
-
-  if (user.clave === document.getElementById("clave").value) {
-    sessionStorage.setItem(HISTORIC_USER, user.nombre);
-    window.location.href = "lobby.html";
-  } else {
-    alert("Clave incorrecta");
-  }
+function cargarUsuario() {
+  const stringUsuario = localStorage.getItem(HISTORIC_USER);
+  return stringUsuario ? JSON.parse(stringUsuario) : [];
 }

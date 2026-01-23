@@ -1,5 +1,5 @@
 ### Get all pets
-GET http://localhost:3000/pets
+GET http://localhost:3000/users
 Accept: application/json
 
 ### Get libro by ID
@@ -7,18 +7,36 @@ GET http://localhost:3000/pets/69735b1c697a34075675d002
 Accept: application/json
 
 ### Delete libro by ID
-DELETE http://localhost:3000/pets/6967edfb8768ad4a16f7a7aa
+DELETE http://localhost:3000/users/6973d747bc5c12ef79b34be6
 Accept: application/json
 
-### Create a new libro
-POST http://localhost:3000/pets
+### login a user admin
+POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-  "nombre": "jeje",
-  "raza": "alguna",
-  "foto": "una buena",
-  "descripcion": "si"
+  "name": "jorgeAdmin",
+  "password": "admin"
+}
+
+### Create a user admin
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+  "name": "jorgeAdmin",
+  "password": "admin",
+  "admin": true
+}
+
+### Create a user no admin
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+  "name": "jorge",
+  "password": "noadmin",
+  "admin": false
 }
 
 ### Update a libro by ID
@@ -52,4 +70,18 @@ Accept: application/json
 
 ### Delete libro by ID
 DELETE http://localhost:3000/users/6973981733a95d1d5f3361e7
+Accept: application/json
+
+### Create a user no admin
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "jorge",
+  "description": "producto",
+  "price": 15
+}
+
+### Get all pets
+GET http://localhost:3000/products
 Accept: application/json

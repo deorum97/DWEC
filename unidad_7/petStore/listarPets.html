@@ -9,20 +9,28 @@
     <script defer type="module" src="js/petController.js"></script>
   </head>
   <body>
-    <header></header>
-    <main>
+    <header class="headerB"></header>
+    <main clas="mainB">
       <section id="tablaCard" class="grid"></section>
-      <a href="crearPet.html">Crear Pet</a>
-      <section class="grid">
-        <card class="card">
-          <header>nombre del perro</header>
-          <main>
-            <img src="images/nutria.jpg" alt="Nutria" />
-          </main>
-          <footer></footer>
-        </card>
+      <section class="sectionBoton">
+        <form id="formRegistroPet">
+          <label>
+            nombre
+            <input type="text" name="user" id="nombre" required />
+          </label>
+          <label>
+            raza
+            <input type="text" name="raza" id="raza" required />
+          </label>
+          <label>foto<input type="text" name="foto" id="foto" /></label>
+          <label>
+            descripcion
+            <input type="text" name="descripcion" id="descripcion"
+          /></label>
+          <button id="registroMascota">Enviar</button>
+        </form>
       </section>
     </main>
-    <footer></footer>
+    <footer class="footerB"></footer>
   </body>
 </html>

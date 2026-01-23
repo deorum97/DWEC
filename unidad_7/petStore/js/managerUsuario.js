@@ -1,6 +1,7 @@
 "use strict";
 
-import { HISTORIC_USER, HISTORIC_USERL } from "../model/constant.js";
+import { HISTORIC_USER, API_URL } from "../model/constant.js";
+import { Usuario } from "../model/user.js";
 
 class UsuarioManager {
   constructor() {
@@ -16,27 +17,44 @@ class UsuarioManager {
     return stringUsuario ? JSON.parse(stringUsuario) : [];
   }
 
-  guardarNuevoUsuario(usuario) {
-    this.array.push(usuario);
-    localStorage.setItem(HISTORIC_USER, JSON.stringify(this.array));
-  }
-
-  comprobarClave(clave, claveR) {
-    return clave === claveR ? true : false;
-  }
-
   getUsuario() {
-    const stringUsuario = sessionStorage.getItem(HISTORIC_USERL);
+    const stringUsuario = sessionStorage.getItem(HISTORIC_USER);
     return stringUsuario ? JSON.stringify(stringUsuario) : null;
   }
 
-  loguearUsuario(nombre, clave) {
-    this.array.forEach((element) => {
-      if (element.nombre === nombre && element.clave === clave) {
-        sessionStorage.setItem(HISTORIC_USERL, element.nombre);
-        window.location.href = "lobby.html";
-      }
-    });
+  async loguearUsuario(nombre, clave) {
+    const requestUser = await fetch(API_URL + "users/" + nombre);
+
+    if (!requestUser.ok) {
+      alert("Usuario no encontrado");
+      return;
+    }
+
+    const user = await requestUser.json();
+
+    if (user.clave === clave) {
+      sessionStorage.setItem(HISTORIC_USER, user.nombre);
+      window.location.href = "listarPets.html";
+    } else {
+      alert("Clave incorrecta");
+    }
+  }
+  async registrarUsuario(nombre, clave, claveR) {
+    if (clave === claveR) {
+      let myHeaders = new Headers({
+        "Content-Type": "application/json",
+      });
+      const user = new Usuario(nombre, clave);
+      const requestUser = new Request(`${API_URL}users`, {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: myHeaders,
+      });
+      const requestRegisterUser = await fetch(requestUser);
+      const dataCreatedUser = await requestRegisterUser.json();
+      this.loguearUsuario(nombre, clave);
+      return dataCreatedUser;
+    }
   }
 }
 
