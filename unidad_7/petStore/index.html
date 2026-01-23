@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section id="sectionRegister" class="flip-card sright">
+        <div class="title">Registrate</div>
+        <form id="formRegistro">
+          <label
+            >Usuario
+            <input
+              type="text"
+              name="user"
+              id="registroUser"
+              class="flip-card__input"
+            />
+          </label>
+          <label
+            >Contraseña
+            <input
+              type="password"
+              name="clave"
+              id="registroClave"
+              class="flip-card__input"
+            />
+          </label>
+          <label
+            >Repite la contraseña<input
+              type="password"
+              name="claveR"
+              id="registroClaveR"
+              class="flip-card__input"
+          /></label>
+          <button id="btnRegistro" class="flip-card__btn">Registrar</button>
+        </form>
+      </section>
+      <section id="sectionLoguin" class="flip-card sleft">
+        <div class="title">Logueate</div>
+        <form id="formLogin">
+          <label
+            >Usuario<input
+              type="text"
+              name="user"
+              id="user"
+              class="flip-card__input"
+          /></label>
+          <label
+            >Contraseña<input
+              type="password"
+              name="clave"
+              id="clave"
+              class="flip-card__input"
+          /></label>
+          <button id="btnLogueo" class="flip-card__btn">Loguear</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

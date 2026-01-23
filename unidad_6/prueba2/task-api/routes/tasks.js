@@ -19,7 +19,7 @@ router.post("/", async function (req, res, next) {
   const task = await TaskService.post(
     req.body.nombre,
     req.body.fecha,
-    req.body.descripcion
+    req.body.descripcion,
   );
   res.status(201).json(task);
 });
