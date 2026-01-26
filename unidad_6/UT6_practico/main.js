@@ -27,6 +27,7 @@ async function login(name, password) {
     body: JSON.stringify({ name: name, password: password }),
     headers: myHeaders,
   });
+  // request es response
   const requestLoginUser = await fetch(requestUser);
   const dataUser = await requestLoginUser.json();
   sessionStorage.setItem(HISTORIC_USER, JSON.stringify(dataUser));
