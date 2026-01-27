@@ -24,7 +24,7 @@ router.post("/", function (req, res, next) {
     req.body.annioCreacion,
     req.body.mortal,
     req.body.url,
-    req.body.dolor
+    req.body.dolor,
   );
   contador++;
   arrayTorturas.push(tortura);
@@ -52,7 +52,7 @@ router.put("/:id", (req, res) => {
         req.body.annioCreacion,
         req.body.mortal,
         req.body.url,
-        req.body.dolor
+        req.body.dolor,
       );
       arrayTorturas[index] = tortura;
       res.json(tortura);

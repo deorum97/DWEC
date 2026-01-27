@@ -1,0 +1,30 @@
+### Get all petss
+GET http://localhost:3000/pets
+Accept: application/json
+
+### Get libro by ID
+GET http://localhost:3000/pets/6967ef71eaa217cc9a3aef5f
+Accept: application/json
+
+### Delete libro by ID
+DELETE http://localhost:3000/pets/6970f9cf4a774a9e9e5b7bb1
+Accept: application/json
+
+### Create a new libro
+POST http://localhost:3000/pets
+Content-Type: application/json
+
+{
+  "nombre": "jeje",
+  "raza": "alguna",
+  "foto": "muy bonita",
+  "descripcion": "si"
+}
+
+### Update a libro by ID
+PUT http://localhost:3000/pets/6967ef71eaa217cc9a3aef5f
+Content-Type: application/json
+
+{
+  "descripcion": "no"
+}

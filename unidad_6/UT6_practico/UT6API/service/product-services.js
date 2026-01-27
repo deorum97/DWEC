@@ -1,18 +1,20 @@
-const Pet = require("../model/pet");
+const Product = require("../model/product");
 const { MongoClient, ObjectId } = require("mongodb");
+const User = require("../model/user");
+const { HISTORIC_USER } = require("../../constants.js");
 
-class PetService {
+class ProductService {
   static async get() {
     const uri = "mongodb://mongoadmin:secret@localhost:27017";
     const client = new MongoClient(uri);
     try {
       await client.connect();
-      const database = client.db("PetDB");
-      const petsDB = database.collection("pets");
+      const database = client.db("Examen6DB");
+      const productsDB = database.collection("products");
 
-      const pets = await petsDB.find().toArray();
+      const products = await productsDB.find().toArray();
 
-      return pets;
+      return products;
     } finally {
       await client.close();
     }
@@ -23,28 +25,30 @@ class PetService {
     const client = new MongoClient(uri);
     try {
       await client.connect();
-      const database = client.db("PetDB");
-      const petsDB = database.collection("pets");
+      const database = client.db("Examen6DB");
+      const productsDB = database.collection("products");
 
-      const pets = await petsDB.findOne({ _id: new ObjectId(id) });
+      const products = await productsDB.findOne({ _id: new ObjectId(id) });
 
-      return pets;
+      return products;
     } finally {
       await client.close();
     }
   }
 
-  static async post(nombre, raza, foto, descripcion) {
+  static async post(name, description, price) {
     const uri = "mongodb://mongoadmin:secret@localhost:27017";
     const client = new MongoClient(uri);
     try {
       await client.connect();
-      const database = client.db("PetDB");
-      const petsDB = database.collection("pets");
+      const database = client.db("Examen6DB");
+      const productsDB = database.collection("products");
 
-      const newPet = new Pet(nombre, raza, foto, "available", descripcion);
+      const newProduct = new Product(name, description, price);
 
-      const result = await petsDB.insertOne(newPet);
+      const product = { name: name, description: description, price: price };
+
+      const result = await productsDB.insertOne(newProduct);
 
       return result;
     } finally {
@@ -57,12 +61,12 @@ class PetService {
     const client = new MongoClient(uri);
     try {
       await client.connect();
-      const database = client.db("PetDB");
-      const petsDB = database.collection("pets");
+      const database = client.db("Examen6DB");
+      const productsDB = database.collection("products");
 
       const query = { _id: new ObjectId(id) };
 
-      const result = await petsDB.deleteOne(query);
+      const result = await productsDB.deleteOne(query);
 
       if (result.deletedCount === 1) {
         return "Successfully deleted one document.";
@@ -74,19 +78,23 @@ class PetService {
     }
   }
 
-  static async update(id, nombre, raza, foto, estado, descripcion) {
+  static async update(id, descripcion) {
     const uri = "mongodb://mongoadmin:secret@localhost:27017";
     const client = new MongoClient(uri);
     try {
       await client.connect();
-      const database = client.db("PetDB");
-      const petsDB = database.collection("pets");
+      const database = client.db("Examen6DB");
+      const productsDB = database.collection("products");
 
       const filter = { _id: new ObjectId(id) };
 
-      const updatePet = new Pet(nombre, raza, foto, estado, descripcion);
+      const updateProduct = {
+        $set: {
+          descripcion: descripcion,
+        },
+      };
 
-      const result = await petsDB.replaceOne(filter, updatePet);
+      const result = await productsDB.updateOne(filter, updateProduct);
 
       return result;
     } finally {
@@ -95,4 +103,4 @@ class PetService {
   }
 }
 
-module.exports = PetService;
+module.exports = ProductService;

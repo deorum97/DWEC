@@ -1,0 +1,24 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Altura mínima del viewport */
+  margin: 0; /* Importante para evitar espacios extra */
+}
+
+main {
+  flex-grow: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+}
+
+footer {
+  /* Estilos de diseño para el footer */
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+header {
+  /* Estilos de diseño para el footer */
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}

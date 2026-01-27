@@ -1,14 +1,9 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
-}
-main {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 label {
@@ -19,6 +14,11 @@ label {
   text-align: left;
 }
 
+.sectionBoton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card {
   width: 190px;
   height: 254px;
@@ -27,6 +27,10 @@ label {
   box-shadow:
     20px 20px 60px #bebebe,
     -20px -20px 60px #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .flip-card {
@@ -54,4 +58,47 @@ label {
   background: #fff;
   cursor: pointer;
   transition: transform 0.1s ease;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Altura mínima del viewport */
+  margin: 0; /* Importante para evitar espacios extra */
+}
+
+.mainIndex {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainB {
+  flex-grow: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+}
+
+.footerB {
+  /* Estilos de diseño para el footer */
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+.headerB {
+  /* Estilos de diseño para el footer */
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
 }

@@ -29,14 +29,7 @@ router.delete("/:id", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  const pet = await PetService.update(
-    req.params.id,
-    req.body.nombre,
-    req.body.raza,
-    req.body.foto,
-    req.body.estado,
-    req.body.descripcion,
-  );
+  const pet = await PetService.update(req.params.id, req.body.descripcion);
   res.json(pet);
 });
 

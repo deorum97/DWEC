@@ -1,4 +1,4 @@
-const Pet = require("../model/pet");
+const Pet = require("../model/pets");
 const { MongoClient, ObjectId } = require("mongodb");
 
 class PetService {
@@ -74,7 +74,7 @@ class PetService {
     }
   }
 
-  static async update(id, nombre, raza, foto, estado, descripcion) {
+  static async update(id, descripcion) {
     const uri = "mongodb://mongoadmin:secret@localhost:27017";
     const client = new MongoClient(uri);
     try {
@@ -84,9 +84,13 @@ class PetService {
 
       const filter = { _id: new ObjectId(id) };
 
-      const updatePet = new Pet(nombre, raza, foto, estado, descripcion);
+      const updatePet = {
+        $set: {
+          descripcion: descripcion,
+        },
+      };
 
-      const result = await petsDB.replaceOne(filter, updatePet);
+      const result = await petsDB.updateOne(filter, updatePet);
 
       return result;
     } finally {
