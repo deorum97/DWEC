@@ -1,0 +1,50 @@
+### Get all pets
+GET http://localhost:3000/users
+Accept: application/json
+
+### Get usuario by ID
+GET http://localhost:3000/users/69735b1c697a34075675d002
+Accept: application/json
+
+### Delete usuario by ID
+DELETE http://localhost:3000/users/6973cebe1eca7d39f19ad00f
+Accept: application/json
+
+### login a user admin
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "name": "jorgeAdmin",
+  "password": "admin"
+}
+
+### Create a user admin
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+  "name": "jorgeAdmin",
+  "password": "admin",
+  "admin": true
+}
+
+### Create a user no admin
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+  "name": "jorge",
+  "password": "noadmin",
+  "admin": false
+}
+
+### Update a usuario by ID
+PUT http://localhost:3000/users/697a52c0c719a456e4c0c47e
+Content-Type: application/json
+
+{
+  "name": "jorgeUpdated",
+  "password": "noadminUpdated",
+  "admin": false  
+}

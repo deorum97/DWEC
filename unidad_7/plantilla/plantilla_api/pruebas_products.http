@@ -1,0 +1,32 @@
+### Get all pets
+GET http://localhost:3000/products
+Accept: application/json
+
+### Get producto by ID
+GET http://localhost:3000/products/697a573a0ee2482e28d183d8
+Accept: application/json
+
+### Delete producto by ID
+DELETE http://localhost:3000/products/697a573a0ee2482e28d183d8
+Accept: application/json
+
+### Create a product
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "producto1",
+  "description": "un producto",
+  "price": 15
+}
+
+
+### Update a producto by ID
+PUT http://localhost:3000/products/697a57dd66ecbe0c20dd9062
+Content-Type: application/json
+
+{
+  "name": "producto1",
+  "description": "un producto",
+  "price": 17
+}
