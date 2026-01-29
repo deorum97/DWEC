@@ -23,7 +23,11 @@ router.post("/register/", async function (req, res, next) {
     req.body.password,
     req.body.admin,
   );
-  res.status(201).json(user);
+  if (user === false) {
+    return res.status(409).json({ message: "Usuario ya existe" });
+  } else {
+    res.status(201).json(user);
+  }
 });
 
 router.delete("/:id", async (req, res) => {

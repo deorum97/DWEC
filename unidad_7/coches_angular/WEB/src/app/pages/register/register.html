@@ -1,0 +1,25 @@
+<section>
+  <form [formGroup]="registerForm" (submit)="register()">
+    <h2>Register</h2>
+    @if (errorMessage) {
+    <div class="alert error">{{ errorMessage }}</div>
+    }
+    <div>
+      <label>Usuario:</label>
+      <input type="text" formControlName="username" required />
+    </div>
+    <div>
+      <label>Contraseña:</label>
+      <input type="password" formControlName="password" required />
+    </div>
+    <div>
+      <label>Confirmar contraseña:</label>
+      <input type="password" formControlName="passwordR" required />
+    </div>
+    <div>
+      <label>Admin</label>
+      <input type="checkbox" formControlName="admin" />
+    </div>
+    <button type="submit">Registrarse</button>
+  </form>
+</section>

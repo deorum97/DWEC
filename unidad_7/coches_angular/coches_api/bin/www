@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('coches-api:server');
+var debug = require('debug')('ut6api:server');
 var http = require('http');
 
 /**

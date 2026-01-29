@@ -6,8 +6,13 @@
  * found in the LICENSE file at https://angular.dev/license
  */
 
-import {bootstrapApplication} from '@angular/platform-browser';
-import {appConfig} from './app/app.config.js';
-import {App} from './app/app';
-
-bootstrapApplication(App, appConfig).catch((err) => console.error(err));
+import {
+  bootstrapApplication,
+  provideProtractorTestingSupport,
+} from "@angular/platform-browser";
+import { provideRouter } from "@angular/router";
+import { App } from "./app/app";
+import routerConfig from "./app/routes";
+bootstrapApplication(App, {
+  providers: [provideProtractorTestingSupport(), provideRouter(routerConfig)],
+}).catch((err) => console.error(err));

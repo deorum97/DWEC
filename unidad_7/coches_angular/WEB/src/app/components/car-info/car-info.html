@@ -1,0 +1,10 @@
+<div class="car-card">
+  <h3>{{ carInfo().marca }} {{ carInfo().modelo }}</h3>
+  <p>Año: {{ carInfo().year }}</p>
+  <p>Precio: ${{ carInfo().precio }}</p>
+  <img
+    class="foto"
+    [src]="carInfo().imagen"
+    alt="{{ carInfo().marca }} {{ carInfo().modelo }}"
+  />
+</div>

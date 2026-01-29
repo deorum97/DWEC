@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+import { Navbar } from "./components/navbar/navbar";
 
 @Component({
   selector: "app-root",
-  imports: [],
-  template: ` <h1>Default</h1> `,
+  imports: [RouterOutlet, Navbar],
+  templateUrl: "./app.html",
   styleUrls: ["./app.css"],
 })
-export class App {
-  title = "default";
-}
+export class App {}

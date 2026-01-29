@@ -1,11 +1,29 @@
 import { Routes } from "@angular/router";
+import { Contacto } from "./pages/contacto/contacto";
 import { Home } from "./pages/home/home";
+import { Login } from "./pages/login/login";
+import { Register } from "./pages/register/register";
 
 const routerConfig: Routes = [
   {
     path: "",
     component: Home,
-    title: "Home",
+    title: "Inicio",
+  },
+  {
+    path: "contacto",
+    component: Contacto,
+    title: "Contacto",
+  },
+  {
+    path: "login",
+    component: Login,
+    title: "Login",
+  },
+  {
+    path: "register",
+    component: Register,
+    title: "Register",
   },
 ];
 export default routerConfig;

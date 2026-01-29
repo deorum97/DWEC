@@ -1,0 +1,35 @@
+### Get all coches
+GET http://localhost:3000/coches
+Accept: application/json
+
+### Get coche by ID
+GET http://localhost:3000/coches/697a573a0ee2482e28d183d8
+Accept: application/json
+
+### Delete coche by ID
+DELETE http://localhost:3000/coches/697b533b8ef4e9700b90ab36
+Accept: application/json
+
+### Create a car
+POST http://localhost:3000/coches
+Content-Type: application/json
+
+{
+  "marca": "coche1",
+  "modelo": "un coche",
+  "year": 2020,
+  "precio": 25000,
+  "imagen": "url"
+}
+
+
+### Update a coche by ID
+PUT http://localhost:3000/coches/697a57dd66ecbe0c20dd9062
+Content-Type: application/json
+
+{
+  "marca": "coche1",
+  "modelo": "un coche",
+  "year": 2020,
+  "precio": 25000,
+}
