@@ -3,8 +3,8 @@ var router = express.Router();
 
 let CocheService = require("../service/coche-services");
 
-router.get("/:nombre", async (req, res, next) => {
-  const coche = await CocheService.getByNombre(req.params.nombre);
+router.get("/:id", async (req, res, next) => {
+  const coche = await CocheService.getById(req.params.id);
   res.json(coche);
 });
 

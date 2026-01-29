@@ -7,4 +7,7 @@
     [src]="carInfo().imagen"
     alt="{{ carInfo().marca }} {{ carInfo().modelo }}"
   />
+  <div class="details-link">
+    <a [routerLink]="['/car-details', carInfo().id]">Ver detalles</a>
+  </div>
 </div>

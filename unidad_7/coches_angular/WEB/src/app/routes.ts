@@ -4,6 +4,7 @@ import { Home } from "./pages/home/home";
 import { Login } from "./pages/login/login";
 import { Register } from "./pages/register/register";
 import { Cars } from "./pages/cars/cars";
+import { CarDetails } from "./pages/car-details/car-details";
 
 const routerConfig: Routes = [
   {
@@ -30,6 +31,11 @@ const routerConfig: Routes = [
     path: "cars",
     component: Cars,
     title: "coches",
+  },
+  {
+    path: "car-details/:id",
+    component: CarDetails,
+    title: "Detalles del coche",
   },
 ];
 export default routerConfig;

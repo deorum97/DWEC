@@ -3,7 +3,7 @@ GET http://localhost:3000/coches
 Accept: application/json
 
 ### Get coche by ID
-GET http://localhost:3000/coches/697a573a0ee2482e28d183d8
+GET http://localhost:3000/coches/697ba40113e0b2908dabcd37
 Accept: application/json
 
 ### Delete coche by ID
@@ -15,16 +15,16 @@ POST http://localhost:3000/coches
 Content-Type: application/json
 
 {
-  "marca": "coche1",
-  "modelo": "un coche",
+  "marca": "coche chulo",
+  "modelo": "un coche guapo",
   "year": 2020,
-  "precio": 25000,
-  "imagen": "url"
+  "precio": 250000,
+  "imagen": "https://imgs.search.brave.com/uetwEuGtT_l-gw-80asWI9aSxNSNzVvptCQwM3HvWiM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjIv/Mzg2LzgyOS9zbWFs/bC9ibGFjay1tb2Rl/cm4tY2FyLWhlYWRs/aWdodHMtZnJvbnQt/dmlldy1jcmVhdGVk/LXdpdGgtZ2VuZXJh/dGl2ZS1haS1waG90/by5qcGc"
 }
 
 
 ### Update a coche by ID
-PUT http://localhost:3000/coches/697a57dd66ecbe0c20dd9062
+PUT http://localhost:3000/coches/697ba40113e0b2908dabcd37
 Content-Type: application/json
 
 {
@@ -32,4 +32,5 @@ Content-Type: application/json
   "modelo": "un coche",
   "year": 2020,
   "precio": 25000,
+  "imagen": "https://imgs.search.brave.com/VgPOtpbS3VkRPMmHLfSbqCtp11Lp5aC3q2tqj5g2BwA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjYv/MTc1LzQ0Ny9zbWFs/bC9zcG9ydC1jYXIt/bW9kZWwtcGhvdG8u/anBn"
 }
