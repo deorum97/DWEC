@@ -1,0 +1,18 @@
+<section>
+  <label>Filtrar por nombre: </label>
+  <input type="text" #filter (keyup)="filterMovies(filter.value)" /><br />
+  <label>Filtrar por genero: </label>
+  <input type="text" #filterGenre (keyup)="filterByGenre(filterGenre.value)" />
+  <section class="listaPeliculas">
+    @if (!movieListFiltered.length){
+    <p>No hay peliculas que mostrar</p>
+    }@else { @for(movie of movieListFiltered; track $index){
+    <div>
+      <img [src]=" movie.imageUrl " alt="{{ movie.title }}" />
+      <p>@for (star of getEstrellas(movie.rating); track $index) {⭐}</p>
+      <button [routerLink]="['/movies', movie._id]">Detalles</button>
+      <button (click)="deleteMovie(movie._id)">Borrar</button>
+    </div>
+    } }
+  </section>
+</section>

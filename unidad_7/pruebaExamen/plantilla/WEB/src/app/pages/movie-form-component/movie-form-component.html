@@ -1,0 +1,29 @@
+<form [formGroup]="movieForm" (submit)="onSubmit()">
+  <label
+    >titulo
+    <input type="text" formControlName="title" />
+  </label>
+
+  <label
+    >genero
+    <input type="text" formControlName="genre" />
+  </label>
+  <label
+    >año
+    <input type="number" formControlName="year" />
+  </label>
+  <label
+    >rating
+    <input type="number" formControlName="rating" />
+  </label>
+  <label
+    >plataforma
+    <input type="text" formControlName="platform" />
+  </label>
+  <label
+    >imagen
+    <input type="text" formControlName="imageUrl" />
+  </label>
+
+  <button type="submit">Apply now</button>
+</form>

@@ -1,0 +1,38 @@
+### Get all pets
+GET http://localhost:3000/api/movies
+Accept: application/json
+
+### Get producto by ID
+GET http://localhost:3000/api/movies/697c82ce3e6faeccbafbe45d
+Accept: application/json
+
+### Delete producto by ID
+DELETE http://localhost:3000/api/movies/697c83823e6faeccbafbe45e
+Accept: application/json
+
+### Create a product
+POST http://localhost:3000/api/movies/new
+Content-Type: application/json
+
+{
+  "title": "titulo4",
+  "year": "2015",
+  "genre": "accion",
+  "rating": 5,
+  "platform": "Netflix",
+  "imageUrl": "https://img.asmedia.epimg.net/resizer/v2/R25VBNJMQJHCRBQFL33FWMJD5A.jpg?auth=719fd125fc4c82c66ba914ece0f40b18ada966eba2bf3bca852b4f781c65090a&width=1200&height=1200&smart=true"
+  }
+
+
+### Update a producto by ID
+PUT http://localhost:3000/api/movies/697a57dd66ecbe0c20dd9062
+Content-Type: application/json
+
+{
+  "title": "titulo1",
+  "year": "2015",
+  "genre": "accion",
+  "rating": 5,
+  "platform": "Netflix",
+  "imageUrl": "http://example.com/image.jpg"
+}

@@ -1,0 +1,15 @@
+<nav>
+  <p [routerLink]="['/']">Mi Aplicación</p>
+  <ul>
+    <li><a [routerLink]="['/']">Inicio</a></li>
+    <li><a [routerLink]="['/contacto']">Contacto</a></li>
+    <li><a [routerLink]="['/movies']">Peliculas</a></li>
+    <li><a [routerLink]="['/movies/new']">Añadir Pelicula</a></li>
+    @if ( !(isLogged$ | async) ) {
+    <li><a [routerLink]="['/login']">Login</a></li>
+    <li><a [routerLink]="['/register']">Register</a></li>
+    }@else {
+    <li><p (click)="desLog()">Desloguearse</p></li>
+    }
+  </ul>
+</nav>

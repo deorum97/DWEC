@@ -1,0 +1,9 @@
+<section>
+  <img [src]=" movie?.imageUrl " alt="{{ movie?.title }}" />
+  <p>Titulo: {{ movie?.title }}</p>
+  <p>Genero: {{ movie?.genre }}</p>
+  <p>Año: {{ movie?.year }}</p>
+  <p>Rating: {{ movie?.rating }}</p>
+  <p>Plataforma: {{ movie?.platform }}</p>
+  <button [routerLink]="['/movies/edit', movie?._id]">Editar</button>
+</section>
