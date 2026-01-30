@@ -1,0 +1,36 @@
+### Get all pets
+GET http://localhost:3000/api/songs
+Accept: application/json
+
+### Get producto by ID
+GET http://localhost:3000/api/songs/697c82ce3e6faeccbafbe45d
+Accept: application/json
+
+### Delete producto by ID
+DELETE http://localhost:3000/api/songs/697c83823e6faeccbafbe45e
+Accept: application/json
+
+### Create a product
+POST http://localhost:3000/api/songs/new
+Content-Type: application/json
+
+{
+  "title": "titulo4",
+  "duration": 2015,
+  "rating": 5,
+  "albumId": 5,
+  "listened": false
+  }
+
+
+### Update a producto by ID
+PUT http://localhost:3000/api/songs/697a57dd66ecbe0c20dd9062
+Content-Type: application/json
+
+{
+  "title": "titulo4",
+  "duration": 2015,
+  "rating": 5,
+  "albumId": 5,
+  "listened": false
+}

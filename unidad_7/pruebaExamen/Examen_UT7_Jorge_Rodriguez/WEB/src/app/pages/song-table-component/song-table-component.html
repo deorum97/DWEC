@@ -1,0 +1,41 @@
+<div class="container" id="app">
+  <h2>Hybrid Theory - Canciones</h2>
+  <button [routerLink]="[`/`]">⬅ Volver</button>
+  <button [routerLink]="[`/songs/new/`+albumId]">➕ Nueva canción</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Duración</th>
+        <th>Rating</th>
+        <th>Escuchada</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="songTable">
+      @for(song of songListFiltered; track $index){
+      <tr>
+        <td>{{song.title}}</td>
+        <td>{{song.duration}}</td>
+        <td>
+          <span>
+            @for (star of getEstrellas(song.rating); track $index) {★}</span
+          >
+          <!--  <span class="stars" onclick="setRating(1, 1)"> ★ </span
+          ><span class="stars" onclick="setRating(1, 2)"> ★ </span
+          ><span class="stars" onclick="setRating(1, 3)"> ★ </span
+          ><span class="stars" onclick="setRating(1, 4)"> ★ </span
+          ><span class="stars" onclick="setRating(1, 5)"> ★ </span> -->
+        </td>
+        <td>
+          <input type="checkbox" checked="" onchange="toggleListened(1)" />
+        </td>
+        <td>
+          <button (click)="deleteSong(song._id)">Eliminar</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

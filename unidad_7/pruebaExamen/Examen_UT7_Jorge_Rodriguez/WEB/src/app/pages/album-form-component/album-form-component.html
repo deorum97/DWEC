@@ -1,0 +1,19 @@
+<div class="container" id="app">
+  <h2>Crear Álbum</h2>
+  <form [formGroup]="albumForm" (submit)="onSubmit()">
+    <label>Título</label><br />
+    <input required="" type="text" formControlName="title" /><br />
+
+    <label>Artista</label><br />
+    <input required="" type="text" formControlName="artist" /><br />
+
+    <label>Año</label><br />
+    <input type="number" required="" formControlName="year" /><br />
+
+    <label>Género</label><br />
+    <input type="text" formControlName="genre" /><br /><br />
+
+    <button type="submit">Guardar</button>
+    <button type="button" [routerLink]="[`/`]">Cancelar</button>
+  </form>
+</div>
